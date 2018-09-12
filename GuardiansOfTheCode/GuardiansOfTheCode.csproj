@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enemy\EnemyFactory.cs" />
+    <Compile Include="Enemy\Giant.cs" />
+    <Compile Include="Enemy\IEnemy.cs" />
+    <Compile Include="Enemy\Werewolf.cs" />
+    <Compile Include="Enemy\Zombie.cs" />
+    <Compile Include="GameBoard\GameBoard.cs" />
     <Compile Include="Player\PrimaryPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
