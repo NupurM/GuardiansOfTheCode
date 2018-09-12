@@ -1,4 +1,6 @@
-﻿namespace GuardiansOfTheCode.Player
+﻿using GuardiansOfTheCode.Weapon;
+
+namespace GuardiansOfTheCode.Player
 {
     public sealed class PrimaryPlayer
     {
@@ -15,11 +17,17 @@
             Instance = new PrimaryPlayer()
             {
                 Name = "Raptor",
-                Level = 1
+                Level = 1,
+                Health = 100,
+                Armor = 25
             };
         }
 
         public string Name { get; set; }
         public int Level { get; set; }
+        public IWeapon Weapon { get; set; }
+        public int Health { get; set; }
+        public int Armor { get; set; }
+
     }
 }

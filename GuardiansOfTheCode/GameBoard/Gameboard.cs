@@ -2,15 +2,17 @@
 using GuardiansOfTheCode.Player;
 using System;
 using System.Collections.Generic;
+using GuardiansOfTheCode.Weapon;
 
 namespace GuardiansOfTheCode.GameBoard
 {
     public class GameBoard
     {
-        private PrimaryPlayer _player;
+        private readonly PrimaryPlayer _player;
         public GameBoard()
         {
             _player = PrimaryPlayer.Instance;
+            _player.Weapon = new Sword(12, 8);
         }
 
         public void PlayArea(int level)
@@ -37,7 +39,12 @@ namespace GuardiansOfTheCode.GameBoard
 
             foreach (var enemy in enemies)
             {
-                Console.WriteLine(enemy.GetType());
+                while (enemy.Health > 0 && _player.Health > 0)
+                {
+                    _player.Weapon.Use(enemy);
+                    enemy.Attack(_player);
+                    Console.WriteLine($"Enemy health: {enemy.Health} \t Player health: {_player.Health}");
+                }
             }
         }
     }

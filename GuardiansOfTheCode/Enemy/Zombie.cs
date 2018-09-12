@@ -13,6 +13,11 @@ namespace GuardiansOfTheCode.Enemy
 
         public int Health { get; set; }
         public int Level { get; }
+        public int OvertimeDamage { get; set; }
+        public int Armor { get; set; }
+        public int FireDamage { get; set; }
+        public bool Paralyzed { get; set; }
+        public int ParalyzedFor { get; set; }
 
         public void Attack(PrimaryPlayer player)
         {
