@@ -1,5 +1,9 @@
 ﻿namespace GuardiansOfTheCode.Enemy
 {
+    /// <summary>
+    /// Instantiates and returns the correct level of enemy.
+    /// Returns one enemy at a time.
+    /// </summary>
     public static class EnemyFactory
     {
         public static Werewolf SpawnWerewolf(int areaLevel)
