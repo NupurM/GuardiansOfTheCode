@@ -1,10 +1,10 @@
-﻿using GuardiansOfTheCode.Enemy;
-using GuardiansOfTheCode.Player;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using GuardiansOfTheCode.Enemy;
+using GuardiansOfTheCode.Player;
 using GuardiansOfTheCode.Weapon;
 
-namespace GuardiansOfTheCode.GameBoard
+namespace GuardiansOfTheCode.Board
 {
     public class GameBoard
     {

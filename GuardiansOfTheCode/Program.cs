@@ -1,17 +1,16 @@
-﻿using GuardiansOfTheCode.Player;
-using System;
-using GuardiansOfTheCode.GameBoard;
+﻿using System;
+using GuardiansOfTheCode.Board;
 
 namespace GuardiansOfTheCode
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             //var player = PrimaryPlayer.Instance;
             //Console.WriteLine($"Player: {player.Name} - Level {player.Level} ");
 
-            var board = new GameBoard.GameBoard();
+            var board = new GameBoard();
             board.PlayArea(1);
 
             Console.WriteLine("\n\n\t\t**Game Over**\n\n");

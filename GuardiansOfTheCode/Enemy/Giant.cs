@@ -1,5 +1,5 @@
-﻿using GuardiansOfTheCode.Player;
-using System;
+﻿using System;
+using GuardiansOfTheCode.Player;
 
 namespace GuardiansOfTheCode.Enemy
 {
