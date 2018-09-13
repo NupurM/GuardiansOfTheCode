@@ -1,4 +1,5 @@
-﻿using GuardiansOfTheCode.Weapon;
+﻿using Common;
+using GuardiansOfTheCode.Weapon;
 
 namespace GuardiansOfTheCode.Player
 {
@@ -28,6 +29,6 @@ namespace GuardiansOfTheCode.Player
         public IWeapon Weapon { get; set; }
         public int Health { get; set; }
         public int Armor { get; set; }
-
+        public Card[] Cards { get; set; }
     }
 }

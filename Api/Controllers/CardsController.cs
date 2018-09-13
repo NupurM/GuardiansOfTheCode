@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Api.Services;
 using Common;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -20,7 +16,7 @@ namespace Api.Controllers
             _cardService = cardService;
         }
 
-        [HttpGet("")]
+        [HttpGet]
         public IEnumerable<Card> Get()
         {
             return _cardService.FetchCards();

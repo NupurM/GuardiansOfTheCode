@@ -44,7 +44,6 @@
             else
             {
                 return new Zombie(100, 8);
-
             }
         }
     }
