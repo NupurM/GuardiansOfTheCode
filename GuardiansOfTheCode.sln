@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{3F032353-0233-484D-8314-18BD4DEA9E7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{3F032353-0233-484D-8314-18BD4DEA9E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{8172736C-ACF0-4AC0-ACFB-1A80791DD239}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{8172736C-ACF0-4AC0-ACFB-1A80791DD239}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuardiansOfTheCode", "GuardiansOfTheCode\GuardiansOfTheCode.csproj", "{5987E823-A76E-4B93-B89B-E1AAC104DE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyWeaponLib", "MilkyWeaponLib\MilkyWeaponLib.csproj", "{739DE66D-9C79-4663-88A7-570035882419}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{5987E823-A76E-4B93-B89B-E1AAC104DE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5987E823-A76E-4B93-B89B-E1AAC104DE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5987E823-A76E-4B93-B89B-E1AAC104DE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739DE66D-9C79-4663-88A7-570035882419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739DE66D-9C79-4663-88A7-570035882419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739DE66D-9C79-4663-88A7-570035882419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739DE66D-9C79-4663-88A7-570035882419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

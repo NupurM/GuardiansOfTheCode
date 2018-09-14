@@ -4,9 +4,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Common;
+using GuardiansOfTheCode.Adapters;
 using GuardiansOfTheCode.Enemy;
 using GuardiansOfTheCode.Player;
 using GuardiansOfTheCode.Weapon;
+using MilkyWeaponLib;
 using Newtonsoft.Json;
 
 namespace GuardiansOfTheCode.Board
@@ -22,7 +24,7 @@ namespace GuardiansOfTheCode.Board
 
         public async Task PlayArea(int level)
         {
-            _player.Cards = (await FetchCards()).ToArray();
+            //_player.Cards = (await FetchCards()).ToArray();
 
             Console.WriteLine("Ready to play Level 1?");
             Console.ReadKey();
@@ -31,6 +33,18 @@ namespace GuardiansOfTheCode.Board
             {
                 PlayFirstLevel();
             }
+            else if (level == -1)
+            {
+                Console.WriteLine("Play special level?");
+                Console.ReadKey();
+                PlaySpecialLevel();
+            }
+        }
+
+        private void PlaySpecialLevel()
+        {
+            _player.Weapon = new WeaponAdapter(new Blaster());
+            _player.Weapon.Use(EnemyFactory.SpawnZombie(55));
         }
 
         private void PlayFirstLevel()

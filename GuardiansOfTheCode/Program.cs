@@ -20,8 +20,8 @@ namespace GuardiansOfTheCode
                 //Console.WriteLine($"Player: {player.Name} - Level {player.Level} ");
 
                 //TestApiConnection().Wait();
-                //var board = new GameBoard();
-                //board.PlayArea(1).Wait();
+                var board = new GameBoard();
+                board.PlayArea(-1).Wait();
 
                 TestDecorators();
 
