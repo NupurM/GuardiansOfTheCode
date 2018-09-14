@@ -2,6 +2,8 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Common;
+using Common.Decorators;
 using GuardiansOfTheCode.Board;
 
 namespace GuardiansOfTheCode
@@ -14,12 +16,14 @@ namespace GuardiansOfTheCode
             {
                 Console.WriteLine("\n\n\t\t**Starting Game**\n\n");
 
-                TestApiConnection().Wait();
                 //var player = PrimaryPlayer.Instance;
                 //Console.WriteLine($"Player: {player.Name} - Level {player.Level} ");
 
-                var board = new GameBoard();
-                board.PlayArea(1).Wait();
+                //TestApiConnection().Wait();
+                //var board = new GameBoard();
+                //board.PlayArea(1).Wait();
+
+                TestDecorators();
 
                 Console.WriteLine("\n\n\t\t**Game Over**\n\n");
                 Console.Write("Press any key to continue..");
@@ -61,6 +65,16 @@ namespace GuardiansOfTheCode
                 throw new Exception("Failed to connect to the server");
             }
 
+        }
+
+        private static void TestDecorators()
+        {
+            Card soldier = new Card("Soldier", 25, 20);
+            soldier = new AttackDecorator(soldier, "Sword", 15);
+            soldier = new AttackDecorator(soldier, "Amulet", 5);
+            soldier = new DefenseDecorator(soldier, "Helmet", 10);
+            soldier = new DefenseDecorator(soldier, "Heavy Armor", 45);
+            Console.WriteLine($"Final stats Soldier: {soldier.Attack}/{soldier.Defense}");
         }
     }
 }
