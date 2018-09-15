@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Common;
+using Common.CardComponent;
 
 namespace Api.Services
 {

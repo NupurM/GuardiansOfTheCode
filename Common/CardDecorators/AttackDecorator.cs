@@ -1,4 +1,6 @@
-﻿namespace Common.Decorators
+﻿using Common.CardComponent;
+
+namespace Common.CardDecorators
 {
     public class AttackDecorator : CardDecorator
     {

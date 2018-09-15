@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Api.Services;
-using Common;
+using Common.CardComponent;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
