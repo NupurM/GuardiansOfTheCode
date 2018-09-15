@@ -2,8 +2,6 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Common;
-using Common.Decorators;
 using GuardiansOfTheCode.Board;
 
 namespace GuardiansOfTheCode
@@ -14,19 +12,13 @@ namespace GuardiansOfTheCode
         {
             try
             {
-                Console.WriteLine("\n\n\t\t**Starting Game**\n\n");
+                Console.WriteLine("\t**Starting Game**\n");
 
-                //var player = PrimaryPlayer.Instance;
-                //Console.WriteLine($"Player: {player.Name} - Level {player.Level} ");
-
-                //TestApiConnection().Wait();
+                TestApiConnection().Wait();
                 var board = new GameBoard();
-                board.PlayArea(-1).Wait();
+                board.PlayArea(1).Wait();
 
-                TestDecorators();
-
-                Console.WriteLine("\n\n\t\t**Game Over**\n\n");
-                Console.Write("Press any key to continue..");
+                Console.WriteLine("\n\n\t**Game Over**\n\n");
             }
             catch (Exception e)
             {
@@ -34,6 +26,7 @@ namespace GuardiansOfTheCode
             }
             finally
             {
+                Console.Write("Press any key to continue..");
                 Console.ReadKey();
             }
         }
@@ -59,22 +52,11 @@ namespace GuardiansOfTheCode
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("Failed to initialize game.\n" + e.Message);
+                        Console.WriteLine("Failed to initialize game.\n" + e.Message + "\nIs the API running?\n");
                     }
                 }
                 throw new Exception("Failed to connect to the server");
             }
-
-        }
-
-        private static void TestDecorators()
-        {
-            Card soldier = new Card("Soldier", 25, 20);
-            soldier = new AttackDecorator(soldier, "Sword", 15);
-            soldier = new AttackDecorator(soldier, "Amulet", 5);
-            soldier = new DefenseDecorator(soldier, "Helmet", 10);
-            soldier = new DefenseDecorator(soldier, "Heavy Armor", 45);
-            Console.WriteLine($"Final stats Soldier: {soldier.Attack}/{soldier.Defense}");
         }
     }
 }

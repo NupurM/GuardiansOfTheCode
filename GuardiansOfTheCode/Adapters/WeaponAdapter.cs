@@ -17,7 +17,8 @@ namespace GuardiansOfTheCode.Adapters
 
         public void Use(IEnemy enemy)
         {
-            Console.WriteLine("Pew! Pew!");
+            Console.WriteLine("\n\n\t  Pew! Pew!" +
+                              "\n\t  Pew! Pew!");
             enemy.Health -= _spaceWeapon.Shoot();
         }
     }

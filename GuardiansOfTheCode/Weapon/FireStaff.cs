@@ -18,7 +18,7 @@ namespace GuardiansOfTheCode.Weapon
         {
             enemy.Health -= Damage;
             enemy.OvertimeDamage -= _fireDamage;
-            Console.WriteLine($"FireStaff attack on {enemy.GetType()}");
+            Console.WriteLine($"FireStaff attack on {enemy.GetType().Name}");
         }
     }
 }

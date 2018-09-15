@@ -21,6 +21,7 @@ namespace GuardiansOfTheCode.Enemy
 
         public void Attack(PrimaryPlayer player)
         {
+            player.Health -= 10;
             Console.WriteLine($"Zombie attacking {player.Name}");
         }
 

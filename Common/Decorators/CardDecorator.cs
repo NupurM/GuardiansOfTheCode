@@ -10,7 +10,7 @@
             Card = card;
         }
 
-        public override string Name => $"{Card.Name} , {base.Name}";
+        public override string Name => $"{Card.Name} + {base.Name}";
         public override int Attack => Card.Attack + base.Attack;
         public override int Defense => Card.Defense + base.Defense;
     }

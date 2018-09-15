@@ -28,6 +28,7 @@ namespace GuardiansOfTheCode.Enemy
 
         public void Attack(PrimaryPlayer player)
         {
+            player.Health -= 15;
             Console.WriteLine($"Werewolf attacking {player.Name}");
         }
 

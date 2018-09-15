@@ -21,6 +21,7 @@ namespace GuardiansOfTheCode.Enemy
 
         public void Attack(PrimaryPlayer player)
         {
+            player.Health -= 20;
             Console.WriteLine($"Giant attacking {player.Name}");
         }
 

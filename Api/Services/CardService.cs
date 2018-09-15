@@ -9,11 +9,11 @@ namespace Api.Services
         {
             return new List<Card>
             {
-                new Card{Name = "Ultimate Shadow Wraith", Attack = 90, Defense = 80},
-                new Card{Name = "Puppet of Doom", Attack =64 , Defense = 91},
-                new Card{Name = "Lost Soul", Attack = 77, Defense = 61},
-                new Card{Name = "Plague Druid", Attack = 55, Defense = 57},
-                new Card{Name = "Rage Dragon", Attack = 90, Defense = 95}
+                new Card("Shadow Wraith", 90, 80),
+                new Card("Puppet of Doom", 64, 91),
+                new Card("Lost Soul", 77, 61),
+                new Card("Plague Druid", 55, 57),
+                new Card("Rage Dragon", 90, 95)
             };
         }
     }

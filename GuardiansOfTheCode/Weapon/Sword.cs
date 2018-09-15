@@ -17,7 +17,7 @@ namespace GuardiansOfTheCode.Weapon
         {
             enemy.Health -= Damage;
             enemy.Armor -= ArmorDamage;
-            Console.WriteLine($"Sword attack on {enemy.GetType()}");
+            Console.WriteLine($"Sword attack on {enemy.GetType().Name}");
         }
     }
 }

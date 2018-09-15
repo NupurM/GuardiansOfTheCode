@@ -19,7 +19,7 @@ namespace GuardiansOfTheCode.Weapon
             enemy.Health -= Damage;
             enemy.Paralyzed = true;
             enemy.ParalyzedFor = _paralyzedFor;
-            Console.WriteLine($"IceStaff attack on {enemy.GetType()}");
+            Console.WriteLine($"IceStaff attack on {enemy.GetType().Name}");
         }
     }
 }

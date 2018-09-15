@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using System.Collections.Generic;
+using Common;
 using GuardiansOfTheCode.Weapon;
 
 namespace GuardiansOfTheCode.Player
@@ -17,7 +18,7 @@ namespace GuardiansOfTheCode.Player
         {
             Instance = new PrimaryPlayer()
             {
-                Name = "Raptor",
+                Name = "Player",
                 Level = 1,
                 Health = 100,
                 Armor = 25
@@ -29,6 +30,6 @@ namespace GuardiansOfTheCode.Player
         public IWeapon Weapon { get; set; }
         public int Health { get; set; }
         public int Armor { get; set; }
-        public Card[] Cards { get; set; }
+        public List<Card> Cards { get; set; }
     }
 }
