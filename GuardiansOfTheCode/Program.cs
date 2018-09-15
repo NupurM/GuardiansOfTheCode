@@ -16,9 +16,9 @@ namespace GuardiansOfTheCode
                 Console.WriteLine("\t**Starting Game**\n");
 
                 TestApiConnection().Wait();
-                TestComposite();
-                //var board = new GameBoard();
-                //board.PlayArea(1).Wait();
+                //TestComposite();
+                var board = new GameBoard();
+                board.PlayArea(1).Wait();
 
                 Console.WriteLine("\n\n\t**Game Over**\n\n");
             }

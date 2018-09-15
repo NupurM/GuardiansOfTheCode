@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Common.CardComponent;
 using Common.CardDecorators;
 using GuardiansOfTheCode.Adapters;
 using GuardiansOfTheCode.Enemy;
 using GuardiansOfTheCode.Player;
+using GuardiansOfTheCode.Proxies;
 using GuardiansOfTheCode.Weapon;
 using MilkyWeaponLib;
-using Newtonsoft.Json;
 
 namespace GuardiansOfTheCode.Facades
 {
@@ -18,6 +17,11 @@ namespace GuardiansOfTheCode.Facades
     {
         private PrimaryPlayer _player;
         private readonly List<IEnemy> _enemies = new List<IEnemy>();
+        private readonly CardsProxy _proxy;
+        public GameBoardFacade()
+        {
+            _proxy = new CardsProxy();
+        }
         public async Task Play(PrimaryPlayer player, int level)
         {
             _player = player;
@@ -32,16 +36,12 @@ namespace GuardiansOfTheCode.Facades
 
         private async Task AddPlayerCards()
         {
-            using (var http = new HttpClient())
-            {
-                var cardsJson = await http.GetStringAsync("http://localhost:61540/api/cards");
-                _player.Cards = JsonConvert.DeserializeObject<IEnumerable<Card>>(cardsJson).ToList();
+            _player.Cards = (await _proxy.GetCards()).ToList();
 
-                Console.WriteLine("\n\nAdding cards:\t   (attack/defense)");
-                foreach (var card in _player.Cards)
-                {
-                    Console.WriteLine($"{card.Name} \t\t   ({card.Attack}/{card.Defense})");
-                }
+            Console.WriteLine("\n\nAdding cards:\t   (attack/defense)");
+            foreach (var card in _player.Cards)
+            {
+                Console.WriteLine($"{card.Name} \t\t   ({card.Attack}/{card.Defense})");
             }
         }
 
